@@ -42,11 +42,11 @@
 
 Name:           d-haven-event
 Version:        1.1.0
-Release:        %mkrel 3.0.2
+Release:        %mkrel 3.0.3
 Epoch:          0
 Summary:        D-Haven Event based processing
 License:        Apache Software License
-Url:            http://d-haven.org/
+URL:            http://d-haven.org/
 Group:          Development/Java
 Source0:        http://dist.d-haven.org/d-haven-event/src/d-haven-event-1.1.0-src.tar.gz
 
@@ -63,6 +63,7 @@ Patch0:         d-haven-event-1.1.0-build_xml.patch
 Requires:       concurrent
 BuildRequires:  jpackage-utils >= 0:1.7.2
 BuildRequires:  ant >= 0:1.6.5
+BuildRequires:  ant-junit
 BuildRequires:  junit
 %if %{with_maven}
 BuildRequires:  maven >= 0:1.1
@@ -150,6 +151,7 @@ maven \
 %else
 export CLASSPATH=$(build-classpath concurrent junit)
 CLASSPATH=${CLASSPATH}:target/classes:target/test-classes
+export OPT_JAR_LIST="ant/ant-junit"
 %{ant} \
     -Dsource=1.4 \
     -Dbuild.sysclasspath=only \
