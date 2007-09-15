@@ -42,7 +42,7 @@
 
 Name:           d-haven-event
 Version:        1.1.0
-Release:        %mkrel 3.0.3
+Release:        %mkrel 3.0.4
 Epoch:          0
 Summary:        D-Haven Event based processing
 License:        Apache Software License
@@ -75,8 +75,6 @@ Requires(post):    jpackage-utils >= 0:1.7.2
 Requires(postun):  jpackage-utils >= 0:1.7.2
 %if %{gcj_support}
 BuildRequires:    java-gcj-compat-devel
-Requires(post):   java-gcj-compat
-Requires(postun): java-gcj-compat
 %endif
 
 %if ! %{gcj_support}
