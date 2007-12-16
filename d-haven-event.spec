@@ -42,7 +42,7 @@
 
 Name:           d-haven-event
 Version:        1.1.0
-Release:        %mkrel 3.0.4
+Release:        %mkrel 3.0.5
 Epoch:          0
 Summary:        D-Haven Event based processing
 License:        Apache Software License
@@ -61,7 +61,7 @@ Source6:        d-haven-event-1.1.0.pom
 Patch0:         d-haven-event-1.1.0-build_xml.patch
 
 Requires:       concurrent
-BuildRequires:  jpackage-utils >= 0:1.7.2
+BuildRequires:  java-rpmbuild >= 0:1.7.2
 BuildRequires:  ant >= 0:1.6.5
 BuildRequires:  ant-junit
 BuildRequires:  junit
