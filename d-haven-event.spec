@@ -81,6 +81,7 @@ BuildRequires:    java-gcj-compat-devel
 BuildArch:      noarch
 %endif
 
+BuildRoot:      %{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 D-Haven Event is a library designed to make it easier to
