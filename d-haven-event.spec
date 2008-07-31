@@ -112,7 +112,7 @@ Group:          Development/Documentation
 %patch0 -b .sav
 mkdir xdocs
 cp %{SOURCE5} xdocs/navigation.xml
-
+sed --in-place "s/haltonerrot=\"true\"/haltonfailure=\"false\"/" build.xml
 %build
 %if %{with_maven}
 export DEPCAT=$(pwd)/d-haven-event-1.1.0-depcat.new.xml
