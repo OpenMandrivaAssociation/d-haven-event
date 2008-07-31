@@ -27,10 +27,9 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-%define _with_gcj_support 1
 %define _without_maven 1
 
-%define gcj_support %{?_with_gcj_support:1}%{!?_with_gcj_support:%{?_without_gcj_support:0}%{!?_without_gcj_support:%{?_gcj_support:%{_gcj_support}}%{!?_gcj_support:0}}}
+%define gcj_support 0
 
 # If you don't want to build with maven, and use straight ant instead,
 # give rpmbuild option '--without maven'
@@ -42,7 +41,7 @@
 
 Name:           d-haven-event
 Version:        1.1.0
-Release:        %mkrel 4
+Release:        %mkrel 4.0.1
 Epoch:          0
 Summary:        D-Haven Event based processing
 License:        Apache Software License
@@ -94,8 +93,6 @@ been brought to a minimum.
 %package javadoc
 Summary:        Javadoc for %{name}
 Group:          Development/Java
-Requires(post):   /bin/rm,/bin/ln
-Requires(postun): /bin/rm
 
 %description javadoc
 %{summary}.
@@ -111,10 +108,7 @@ Group:          Development/Documentation
 
 %prep
 %setup -q -n %{name}-%{version}
-#find . -name "*.jar" -exec rm -f {} \;
-for j in $(find . -name "*.jar"); do
-    mv $j $j.no
-done
+%remove_java_binaries
 %patch0 -b .sav
 mkdir xdocs
 cp %{SOURCE5} xdocs/navigation.xml
@@ -186,9 +180,7 @@ cp -p LICENSE.txt $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 cp -pr target/docs/* $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 %endif
 
-%if %{gcj_support}
-%{_bindir}/aot-compile-rpm
-%endif
+%{gcj_compile}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -196,19 +188,13 @@ rm -rf $RPM_BUILD_ROOT
 %post
 %update_maven_depmap
 %if %{gcj_support}
-if [ -x %{_bindir}/rebuild-gcj-db ]
-then
-  %{_bindir}/rebuild-gcj-db
-fi
+%{update_gcjdb}
 %endif
 
 %postun
 %update_maven_depmap
 %if %{gcj_support}
-if [ -x %{_bindir}/rebuild-gcj-db ]
-then
-  %{_bindir}/rebuild-gcj-db
-fi
+%{clean_gcjdb}
 %endif
 
 %files
@@ -217,10 +203,7 @@ fi
 %{_javadir}/*
 %{_datadir}/maven2/poms/*
 %config(noreplace) %{_mavendepmapfragdir}/*
-%if %{gcj_support}
-%dir %{_libdir}/gcj/%{name}
-%attr(-,root,root) %{_libdir}/gcj/%{name}/%{name}-*%{version}.jar.*
-%endif
+%{gcj_files}
 
 %files javadoc
 %defattr(0644,root,root,0755)
