@@ -215,3 +215,57 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(0644,root,root,0755)
 %{_docdir}/%{name}-%{version}
 %endif
+
+
+%changelog
+* Thu Dec 09 2010 Oden Eriksson <oeriksson@mandriva.com> 0:1.1.0-4.0.3mdv2011.0
++ Revision: 617491
+- the mass rebuild of 2010.0 packages
+
+* Sun Aug 09 2009 Oden Eriksson <oeriksson@mandriva.com> 0:1.1.0-4.0.2mdv2010.0
++ Revision: 413317
+- rebuild
+
+* Thu Jul 31 2008 Alexander Kurtakov <akurtakov@mandriva.org> 0:1.1.0-4.0.1mdv2009.0
++ Revision: 258322
+- don't haltonerror
+- disable gcj_support
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+    - kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Sun Dec 16 2007 Anssi Hannula <anssi@mandriva.org> 0:1.1.0-3.0.5mdv2008.1
++ Revision: 120858
+- buildrequire java-rpmbuild, i.e. build with icedtea on x86(_64)
+
+* Sat Sep 15 2007 Anssi Hannula <anssi@mandriva.org> 0:1.1.0-3.0.4mdv2008.0
++ Revision: 87311
+- rebuild to filter out autorequires of GCJ AOT objects
+- remove unnecessary Requires(post) on java-gcj-compat
+
+* Sat Aug 18 2007 David Walluck <walluck@mandriva.org> 0:1.1.0-3.0.3mdv2008.0
++ Revision: 66452
+- fix build with junit
+- Import d-haven-event
+
+
+
+* Thu Jul 26 2007 Alexander Kurtakov <akurtakov@active-lynx.com> - 0:1.1.0-3.0.1mdv2008.0
+- Adapt for Mandriva
+
+* Thu Jul 05 2007 Ralph Apel <r.apel@r-apel.de> 0:1.1.0-3jpp
+- Make Vendor, Distribution based on macro
+- Add gcj_support option
+- Optionally build without maven
+- Add -manual subpackage when built with maven
+- Add maven2 depmap frag and pom
+
+* Thu Mar 23 2006 Ralph Apel <r.apel@r-apel.de> 0:1.1.0-2jpp
+- First JPP-1.7 release
+
+* Mon Sep 05 2005 Ralph Apel <r.apel@r-apel.de> 0:1.1.0-1jpp
+- First release

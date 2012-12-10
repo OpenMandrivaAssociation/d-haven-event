@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<project name="d-haven-event" repository="d-haven-event" href="http://d-haven.org">
+
+    <title>d-haven-event: event processing</title>
+
+    <body>
+        <links>
+            <item name="D-Haven" href="http://d-haven.org/"/>
+        </links>
+        <menu name="d-haven">
+            <item name="Overview" href="/index.html"/>
+            <item name="Download " href="/download.html"/>
+            <item name="API Documentation" href="/javadoc.html"/>
+            <item name="CVS Access" href="/cvs-usage.html"/>
+            <item name="Team" href="/team-list.html"/>
+        </menu>
+    </body>
+
+</project>

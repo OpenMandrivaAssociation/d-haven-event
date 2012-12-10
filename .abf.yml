@@ -1,8 +1,2 @@
 sources:
-  "d-haven-event-1.1.0-jpp-depmap.xml:"	5d0a6d26ea33b8d58964990159a68565e17ad7b0
-  "d-haven-event-1.1.0-navigation.xml:"	0ff29ead0d527498242901ee6d557e53c62a2259
-  "d-haven-event-1.1.0.pom:"	27b365c4091f8b8f0dc2e1a442693101fcdd2b6a
-  "d-haven-event-1.1.0-src.tar.gz:"	a7e082b7b8d6b7fccfb511274287df416a567be3
-  "pom-maven2jpp-depcat.xsl:"	5861cae5f65e559ece90a7342d182f5a534b65de
-  "pom-maven2jpp-mapdeps.xsl:"	a837c6d38ea6fb127ba5bf20d917c1e8af791120
-  "pom-maven2jpp-newdepmap.xsl:"	834413ffc7f650705ce65ca2c89100153142cd92
+  "d-haven-event-1.1.0-src.tar.gz": a7e082b7b8d6b7fccfb511274287df416a567be3
