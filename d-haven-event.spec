@@ -41,7 +41,7 @@
 
 Name:           d-haven-event
 Version:        1.1.0
-Release:        %mkrel 4.0.3
+Release:        4.0.4
 Epoch:          0
 Summary:        D-Haven Event based processing
 License:        Apache Software License
