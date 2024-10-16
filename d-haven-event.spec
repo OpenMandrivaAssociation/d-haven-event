@@ -45,7 +45,7 @@ Release:        4.0.4
 Epoch:          0
 Summary:        D-Haven Event based processing
 License:        Apache Software License
-URL:            http://d-haven.org/
+URL:            https://d-haven.org/
 Group:          Development/Java
 Source0:        http://dist.d-haven.org/d-haven-event/src/d-haven-event-1.1.0-src.tar.gz
 
